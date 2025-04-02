@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inscripcion {
-	private Alumno alum;
-	private List<Materia> materias;
+	private Alumno alumno;
+	private List<Materia> materiasInscriptas;
 
 	public Inscripcion(Alumno al) {
-		this.alum = al;
-		this.materias = new ArrayList<>();
+		this.alumno = al;
+		this.materiasInscriptas = new ArrayList<>();
 	}
 
 	public boolean aprobada() {
 		boolean r = true;
-		for(Materia mat: materias){
-			if(!alum.getAprobadas().containsAll(mat.getCorrelativas())) {
+		for(Materia mat: materiasInscriptas){
+			if(!alumno.getAprobadas().containsAll(mat.getCorrelativas())) {
 				r = false;
 			}
 		}
@@ -23,7 +23,7 @@ public class Inscripcion {
 	}
 
 	public void addMateria(Materia mat) {
-		materias.add(mat);
+		materiasInscriptas.add(mat);
 	}
 
 }
