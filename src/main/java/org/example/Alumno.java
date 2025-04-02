@@ -9,4 +9,11 @@ public class Alumno {
 	public Alumno() {
 		this.aprobadas = new ArrayList<>();
 	}
+
+	public void addAprobada(Materia mat) {
+		aprobadas.add(mat);
+	}
+	public List<Materia> getAprobadas() {
+		return aprobadas;
+	}
 }
